@@ -15,6 +15,8 @@ define('CORE', IMOOC.'/core');
 //项目文件所在目录
 define('APP',IMOOC.'\app');
 
+define('MODULE', 'app');
+
 //是否开启调试模式
 define('DEBUG',true);
 
