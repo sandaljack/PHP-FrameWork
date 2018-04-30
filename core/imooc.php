@@ -7,7 +7,8 @@ class imooc
 	static public $classMap = array();
 	static public function run()
 	{
-		$route = new \core\route;
+		$route = new \core\lib\route;
+		p($route);
 	}
 
 	static public function load($class)

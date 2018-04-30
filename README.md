@@ -16,3 +16,14 @@
 
 	spl_autoload_register('\core\imooc::load');
 	//没有引入的类调用load方法
+
+### 路由类 ###
+默认的路由地址： xxx.com/index.php/index/index
+
+1.隐藏index.php
+  (在根目录添加.htaccess文件)
+
+2.获取URL参数部分
+  (/index/index/id/1/str/2)
+
+3.返回对应的控制器和方法
