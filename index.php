@@ -31,4 +31,7 @@ include CORE.'/common/function.php';
 //加载框架核心文件
 include CORE.'/imooc.php';
 
+//new一个类不存在触发这个方法
+spl_autoload_register('\core\imooc::load');
+
 \core\imooc::run();

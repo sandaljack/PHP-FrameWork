@@ -12,3 +12,7 @@
 
 3.启动框架
 
+### 类自动加载 ###
+
+	spl_autoload_register('\core\imooc::load');
+	//没有引入的类调用load方法
