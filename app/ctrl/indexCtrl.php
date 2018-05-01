@@ -2,12 +2,15 @@
 
 namespace app\ctrl;
 
-class indexCtrl
+class indexCtrl extends \core\imooc
 {
 	public function index()
 	{
 		$model = new \core\lib\model();
 		$sql = "SELECT * FROM shop_user";
-		var_dump($model->query($sql)->fetchall(2));
+		
+		$data = 'hello world';
+		$this->assign('data', $data);
+		$this->display('index.html');
 	}
 }

@@ -4,6 +4,7 @@ namespace core;
 
 class imooc
 {	
+	public $assign;
 	static public $classMap = array();
 	static public function run()
 	{
@@ -45,5 +46,20 @@ class imooc
 			}
 		}
 		
+	}
+
+	public function assign($name,$value)
+	{
+		$this->assign[$name] = $value;
+	}
+
+	public function display($file)
+	{
+		$file = APP.'/views/'.$file;
+		if (is_file($file)) {
+			//打散数组，变为单独的变量,将数组生成以键为变量名以值为变量值的变量
+			extract($this->assign);
+			include $file;
+		}
 	}
 }
