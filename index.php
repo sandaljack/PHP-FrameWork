@@ -20,7 +20,13 @@ define('MODULE', 'app');
 //是否开启调试模式
 define('DEBUG',true);
 
+include "vendor/autoload.php";
+
 if (DEBUG) {
+	//错误累显示
+	$whoops = new \Whoops\Run;
+	$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+	$whoops->register();
 	ini_set('display_error', 'On');
 } else {
 	ini_set('display_error', 'Off');

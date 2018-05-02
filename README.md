@@ -39,3 +39,38 @@
 
 ### 日志类 ###
 	PHP_EOL 可以根据系统转换换行
+
+### composer加载 ###
+1.新建composer.json文件
+	
+	{
+		"name": "IMOOC PHP",
+		"description": "PHP Framework",
+		"type": "Framework",
+		"keywords":[
+			"PHP","PHP Framework"
+		], 
+		"require":{
+			"php":">=5.3.0",
+			"filp/whoops":"*",
+			"symfony/var-dumper":"*",
+			"catfan/medoo":"*",
+			"twig/twig":"*"
+		},
+		"repositories": {
+	    "packagist": {
+	        "type": "composer",
+	        "url": "https://packagist.phpcomposer.com"
+	    	}
+		}
+	}
+
+2.替换中国源
+
+	composer config repo.packagist composer https://packagist.phpcomposer.com
+
+3.使用composer命令安装依赖
+
+	composer install //第一次安装
+	composer update
+	
