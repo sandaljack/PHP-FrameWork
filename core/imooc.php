@@ -60,8 +60,17 @@ class imooc
 		$file = APP.'/views/'.$file;
 		if (is_file($file)) {
 			//打散数组，变为单独的变量,将数组生成以键为变量名以值为变量值的变量
-			extract($this->assign);
-			include $file;
+			// extract($this->assign);
+			// include $file;
+			
+			\Twig_Autoloader::register();
+
+			$loader = new \Twig_Loader_Filesystem(APP.'/views');
+			$twig = new \Twig_Environment($loader,array(
+					'cache' => IMOOC.'/log',
+				));
+			$template = $twig->loadTemplate('index.html');
+			$template->display($this->assign?$this->assign:array());
 		}
 	}
 }
