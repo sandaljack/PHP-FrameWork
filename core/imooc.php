@@ -7,7 +7,9 @@ class imooc
 	public $assign;
 	static public $classMap = array();
 	static public function run()
-	{
+	{	
+		\core\lib\log::init();
+		\core\lib\log::log($_SERVER,'server');
 		$route = new \core\lib\route;
 		$ctrlClass = $route->ctrl;
 		$action = $route->action;
