@@ -1,6 +1,13 @@
 # PHP-FrameWork
 学习搭建PHP框架
 
+视频：
+[https://www.imooc.com/learn/696](https://www.imooc.com/learn/696)
+
+参考:
+1.[http://kphcdr.com/](http://kphcdr.com/)
+2.[https://gitee.com/xxg3053/apfw](https://gitee.com/xxg3053/apfw)
+
 ### 框架运行流程 ###
 
 入口文件 -> 定义常量 -> 引入函数库 -> 自动加载类 -> 启动框架 -> 路由解析 -> 加载控制器 -> 返回结果

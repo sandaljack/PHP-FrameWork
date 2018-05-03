@@ -56,7 +56,8 @@ class imooc
 	}
 
 	public function display($file)
-	{
+	{	
+		$filename = $file;
 		$file = APP.'/views/'.$file;
 		if (is_file($file)) {
 			//打散数组，变为单独的变量,将数组生成以键为变量名以值为变量值的变量
@@ -67,9 +68,9 @@ class imooc
 
 			$loader = new \Twig_Loader_Filesystem(APP.'/views');
 			$twig = new \Twig_Environment($loader,array(
-					'cache' => IMOOC.'/log',
+					// 'cache' => IMOOC.'/log',
 				));
-			$template = $twig->loadTemplate('index.html');
+			$template = $twig->loadTemplate($filename);
 			$template->display($this->assign?$this->assign:array());
 		}
 	}
